@@ -1,6 +1,6 @@
 # Sopro Dino
 
-![ Imagem do projeto](https://github.com/savioluis/Sopro-Dino/blob/main/soprodinoimg.png)
+![ Imagem do projeto](https://github.com/savioluis/Sopro-Dino/blob/main/Documentos/soprodinoimg.png)
 
 
 # Descrição
@@ -9,7 +9,7 @@ Este projeto consiste em um jogo desenvolvido na plataforma Godot que interage c
 
 ### Documentação
 
-[Short game design document (SGDD)](https://github.com/savioluis/Sopro-Dino/blob/main/SGDD%20Sopro%20Dino.pdf)
+[Short game design document (SGDD)](https://github.com/savioluis/Sopro-Dino/blob/main/Documentos/SGDD.pdf)
 
 ### Pré-requisitos
 
@@ -35,14 +35,15 @@ vegetação nativa, para alcançar o seu objetivo.
 
 O jogador controla o pulo do personagem por meio de um botão acoplado ao microcontrolador ESP32 e realiza os exercícios respiratórios por meio do Respiron, para controlar o folego do Dino.
 
-## Autores
+# Autores
 
-Miguel Luiz Queiroga
+Sávio Luis Lobo (eu)
 
-Sávio Luis Lobo
+[Miguel Luiz Queiroga](https://github.com/miguelloq)
 
-Gustavo de Oliveira Rocha
 
-## Licença
+[Gustavo de Oliveira Rocha](https://github.com/gustavodolv)
+
+# Licença
 
 Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para obter mais informações.
