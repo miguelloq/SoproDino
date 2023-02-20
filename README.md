@@ -37,7 +37,7 @@ O jogador controla o pulo do personagem por meio de um botão acoplado ao microc
 
 # Autores
 
-Sávio Luis Lobo(https://github.com/savioluis)
+[Sávio Luis Lobo](https://github.com/savioluis)
 
 [Miguel Luiz Queiroga](https://github.com/miguelloq)
 
