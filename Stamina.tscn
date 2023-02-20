@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Stamina.gd" type="Script" id=1]
+
+[node name="ProgressBar" type="ProgressBar"]
+margin_left = 46.0
+margin_top = 36.0
+margin_right = 367.0
+margin_bottom = 88.0
+value = 100.0
+script = ExtResource( 1 )

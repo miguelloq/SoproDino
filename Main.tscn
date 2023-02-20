@@ -1,0 +1,119 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://ParallaxBackground.gd" type="Script" id=2]
+[ext_resource path="res://sprites/sprites.png" type="Texture" id=3]
+[ext_resource path="res://Dinossauro.tscn" type="PackedScene" id=4]
+[ext_resource path="res://PressStart2P-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Stamina.tscn" type="PackedScene" id=6]
+[ext_resource path="res://themesong.wav" type="AudioStream" id=8]
+[ext_resource path="res://die.wav" type="AudioStream" id=9]
+[ext_resource path="res://jump.wav" type="AudioStream" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+use_filter = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+font_data = ExtResource( 5 )
+
+[sub_resource type="Theme" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 5 )
+
+[node name="Main" type="Node"]
+script = ExtResource( 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = -1
+scroll_base_offset = Vector2( 2400, 0 )
+scroll_limit_begin = Vector2( 2400, 0 )
+scroll_ignore_camera_zoom = true
+script = ExtResource( 2 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 2400, 0 )
+
+[node name="Chão" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1125, 710 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 2, 103, 2400, 25 )
+
+[node name="Dinossauro" parent="." instance=ExtResource( 4 )]
+position = Vector2( 95, 663 )
+
+[node name="ThemeSong" type="AudioStreamPlayer" parent="Dinossauro"]
+stream = ExtResource( 8 )
+volume_db = -21.632
+pitch_scale = 1.3
+
+[node name="Die" type="AudioStreamPlayer" parent="Dinossauro"]
+stream = ExtResource( 9 )
+volume_db = -8.819
+
+[node name="Jump" type="AudioStreamPlayer" parent="Dinossauro"]
+stream = ExtResource( 10 )
+volume_db = -13.189
+pitch_scale = 1.27
+
+[node name="Pontos" type="Label" parent="."]
+margin_left = 786.0
+margin_top = 29.0
+margin_right = 1146.0
+margin_bottom = 94.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Pontos: 0"
+uppercase = true
+
+[node name="Record" type="Label" parent="."]
+visible = false
+margin_left = 971.0
+margin_top = 121.0
+margin_right = 1198.0
+margin_bottom = 186.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Record: 0"
+uppercase = true
+
+[node name="ProgressBar" parent="." instance=ExtResource( 6 )]
+margin_left = 65.0
+margin_top = 16.0
+margin_right = 331.0
+margin_bottom = 71.0
+theme = SubResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -226.0
+margin_top = -1.0
+margin_right = 224.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 4 )
+text = "Game Over"
+
+[node name="Button" type="Button" parent="."]
+margin_left = 502.0
+margin_top = 440.0
+margin_right = 754.0
+margin_bottom = 494.0
+custom_fonts/font = SubResource( 5 )
+text = "Jogar Novamente"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="colidiu" from="Dinossauro" to="." method="_on_Dinossauro_colidiu"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
